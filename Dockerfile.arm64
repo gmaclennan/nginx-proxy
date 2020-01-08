@@ -19,9 +19,8 @@ RUN wget -q -O - https://bin.equinox.io/c/ekMN3bCZFUn/forego-stable-linux-$DOCKE
  && chmod u+x /usr/local/bin/forego
 
 ENV DOCKER_GEN_VERSION 0.7.4
-ENV DOCKER_PLATFORM armhf
 
-RUN wget -q -O - https://github.com/jwilder/docker-gen/releases/download/$DOCKER_GEN_VERSION/docker-gen-alpine-linux-$DOCKER_PLATFORM-$DOCKER_GEN_VERSION.tar.gz \
+RUN wget -q -O - https://github.com/buchdag/docker-gen/releases/download/$DOCKER_GEN_VERSION/docker-gen-alpine-linux-$DOCKER_PLATFORM-$DOCKER_GEN_VERSION.tar.gz \
   | tar -C /usr/local/bin -xvz
 
 COPY network_internal.conf /etc/nginx/
